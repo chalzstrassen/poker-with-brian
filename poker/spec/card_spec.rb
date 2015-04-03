@@ -9,4 +9,10 @@ describe Card do
     end
   end
 
+  describe "self#values" do
+    it "should call keys method on hash VALUE" do
+      expect(Card::VALUE).to receive(:keys)
+      Card.values
+    end
+  end
 end

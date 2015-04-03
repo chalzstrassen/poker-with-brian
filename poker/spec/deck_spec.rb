@@ -43,4 +43,11 @@ describe Deck do
       deck.draw
     end
   end
+  describe "#put_card" do
+    it "should put a card on the bottom" do
+      card = deck.take
+      deck.put_card(card)
+      expect(deck.cards.last).to eq(card)
+    end
+  end
 end
