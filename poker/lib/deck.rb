@@ -1,14 +1,21 @@
 require "card"
 
 class Deck
-  def initialize
-    @cards = []
+
+  def self.full_deck
+    cards = []
     Card::SUITS.each do |suit|
       Card.values.each do |value|
-        @cards << Card.new(suit, value)
+        cards << Card.new(suit, value)
       end
     end
-    shuffle!
+    Deck.new(cards)
+  end
+
+  attr_accessor :cards
+  
+  def initialize(cards = [])
+    @cards = cards
   end
 
   def shuffle!

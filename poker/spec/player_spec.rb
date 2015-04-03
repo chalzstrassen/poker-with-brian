@@ -71,4 +71,15 @@ describe Player do
       expect(player.call(11000)).to eq(10000)
     end
   end
+
+  describe "#raise" do
+    it "should put in double the bet" do
+      expect(player.raise(20)).to eq(40)
+    end
+
+    it "should put all money in stack if stack is less than twice the
+        bet amount" do
+        expect(player.raise(6000)).to eq(10000)
+    end
+  end
 end

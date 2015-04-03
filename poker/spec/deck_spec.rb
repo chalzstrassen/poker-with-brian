@@ -6,10 +6,19 @@
 require 'deck'
 
 describe Deck do
-  subject(:deck) { Deck.new }
+  subject(:deck) { Deck.full_deck }
 
-  it "should have 52 cards on initialize" do
-    expect(deck.count).to eq(52)
+  describe "self#full_deck" do
+    it "should have 52 cards on initialize" do
+      expect(deck.count).to eq(52)
+    end
+  end
+
+  describe "#shuffle" do
+    it "should shuffle the deck" do
+      expect(deck.cards).to receive(:shuffle!)
+      deck.shuffle!
+    end
   end
 
   describe "#take" do

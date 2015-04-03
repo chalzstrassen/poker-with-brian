@@ -31,4 +31,8 @@ class Player
       return bet
     end
   end
+
+  def raise(bet)
+    call(bet*2)
+  end
 end
