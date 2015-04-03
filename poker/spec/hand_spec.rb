@@ -10,7 +10,7 @@ describe Hand do
   describe "#rank" do
     it "Ranks its hand" do
       hand.hand_size = [Card.new(:spades, :two), Card.new(:hearts, :two),
-                        Card.new(:spades, :ace), Card.new(:clubss, :five),
+                        Card.new(:spades, :ace), Card.new(:clubs, :five),
                         Card.new(:spades, :jack)]
 
       expect(hand.rank).to eq(:pair)

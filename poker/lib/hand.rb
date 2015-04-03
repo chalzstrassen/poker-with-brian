@@ -10,6 +10,9 @@ class Hand
     @hand_size = Array.new(5)
   end
 
+  def [](idx)
+    @hand_size[idx]
+  end
   def rank
     values, num_suits, num_values = rank_helper
 

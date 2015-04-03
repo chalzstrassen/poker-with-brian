@@ -21,7 +21,11 @@ class Deck
 
   def take
     return [] if @cards.empty?
-    return [@cards.pop]
+    return [@cards.shift]
+  end
+
+  def put_card(card)
+    @cards << card
   end
 
   def draw
